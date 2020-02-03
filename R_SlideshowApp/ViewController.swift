@@ -10,18 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var img1 = UIImage(named:"haru1")
+    var img1 = UIImage(named:"haru1") //★画像はどこに格納するのがいいの？Assertフォルダにしているページもある
     var img2 = UIImage(named:"haru2")
     var img3 = UIImage(named:"haru3")
     var img4 = UIImage(named:"haru4")
+    
+    //一定の間隔で処理を行うためのタイマー
+    var timer = Timer()
 
     @IBOutlet weak var imageview1: UIImageView!
     @IBAction func back(_ sender: Any) {
     }
     @IBAction func play(_ sender: Any) {
-        imageview1.image = img2
+        imageview1.image = img4
     }
     @IBAction func go(_ sender: Any) {
+        
     }
     
     
