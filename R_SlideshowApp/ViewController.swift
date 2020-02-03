@@ -32,6 +32,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    
+
+        //タイマーを設定
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.slideshowTimer(_:)) , userInfo: nil, repeats: true)
+        
+        //selector: #selector(updatetimer(_:)) で指定された関数
+        func slideshowTimer(_ timer: Timer){
+            // 関数が呼ばれていることを確認
+            print("Timer")
+        }
+        
+
     }
 
 
