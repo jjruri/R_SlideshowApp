@@ -31,15 +31,10 @@ class ViewController: UIViewController {
     func displayImage() {
         //画像の名前の配列
         let imageNameArray = [
-            "haru2",
+            "haru4",
             "haru3",
-            "haru4"
+            "haru2"
         ]
-        
-        // 範囲より下を指している場合、最後の画像を表示
-        if dispImageNo < 0 {
-            dispImageNo = 2
-        }
         
         // 範囲より上を指している場合、最初の画像を表示
         if dispImageNo > 2 {
@@ -66,7 +61,7 @@ class ViewController: UIViewController {
         imageview1.image = image
 
         // タイマーの作成、始動
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
         }
 
         // selector: #selector(slideshowtimer(_:)) で指定された関数
