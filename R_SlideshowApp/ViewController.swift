@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var img4 = UIImage(named:"haru4")
     
     //一定の間隔で処理を行うためのタイマー
-    var timer = Timer()
+    //var timer = Timer()
 
     @IBOutlet weak var imageview1: UIImageView!
     @IBAction func back(_ sender: Any) {
@@ -34,11 +34,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     
 
-        //タイマーを設定
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.slideshowTimer(_:)) , userInfo: nil, repeats: true)
-        
-        //selector: #selector(updatetimer(_:)) で指定された関数
-        func slideshowTimer(_ timer: Timer){
+        // タイマーの作成、始動
+            Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
+        }
+
+        // selector: #selector(slideshowtimer(_:)) で指定された関数
+        @objc func slideshowTimer(_ timer: Timer) {
             // 関数が呼ばれていることを確認
             print("Timer")
         }
@@ -46,6 +47,4 @@ class ViewController: UIViewController {
 
     }
 
-
-}
 
