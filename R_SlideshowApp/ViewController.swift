@@ -15,9 +15,6 @@ class ViewController: UIViewController {
     var img3 = UIImage(named:"haru3")
     var img4 = UIImage(named:"haru4")
     
-    //一定の間隔で処理を行うためのタイマー
-    //var timer = Timer()
-
     @IBOutlet weak var imageview1: UIImageView!
     @IBAction func back(_ sender: Any) {
     }
@@ -28,6 +25,18 @@ class ViewController: UIViewController {
         
     }
     
+    // 表示している画像の番号
+    var dispImageNo = 0
+    
+    // 表示している画像の番号を元に画像を表示する
+    func displayImage() {
+        //画像の名前の配列
+        let imageNameArray = [
+            "haru2",
+            "haru3",
+            "haru4"
+        ]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +44,7 @@ class ViewController: UIViewController {
     
 
         // タイマーの作成、始動
-            Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
         }
 
         // selector: #selector(slideshowtimer(_:)) で指定された関数
