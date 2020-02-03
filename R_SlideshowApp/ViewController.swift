@@ -61,7 +61,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    
+   
+        let image = UIImage(named:"haru4")
+        imageview1.image = image
 
         // タイマーの作成、始動
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
@@ -69,8 +71,10 @@ class ViewController: UIViewController {
 
         // selector: #selector(slideshowtimer(_:)) で指定された関数
         @objc func slideshowTimer(_ timer: Timer) {
-            // 関数が呼ばれていることを確認
-            print("Timer")
+            // 表示している画像の番号を１増やす
+            dispImageNo += 1
+            // 表示している画像の番号を元に画像を表示する
+            displayImage()
         }
         
 
