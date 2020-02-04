@@ -10,19 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //タイマー
+    var timer : Timer!
+    
     //var img1 = UIImage(named:"haru1") //★画像はどこに格納するのがいいの？Assertフォルダにしているページもある
     //var img2 = UIImage(named:"haru2")
     //var img3 = UIImage(named:"haru3")
     //var img4 = UIImage(named:"haru4")
     
     @IBOutlet weak var imageview1: UIImageView!
-    @IBAction func back(_ sender: Any) {
-    }
-    @IBAction func play(_ sender: Any) {
-    }
-    @IBAction func go(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var back_outlet: UIButton!
+    @IBOutlet weak var go_outlet: UIButton!
     
     // 表示している画像の番号
     var dispImageNo = 0
@@ -62,6 +60,10 @@ class ViewController: UIViewController {
 
         // タイマーの作成、始動
         Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
+        
+        // タイマー中は戻る・進むボタンを無効に
+        back_outlet.isEnabled = true
+        go_outlet.isEnabled = true
         }
 
         // selector: #selector(slideshowtimer(_:)) で指定された関数
@@ -71,6 +73,20 @@ class ViewController: UIViewController {
             // 表示している画像の番号を元に画像を表示する
             displayImage()
         }
+
+        
+       
+    
+    @IBAction func back(_ sender: Any) {
+        if self.timer == nil{
+         //★OutletじゃないといisEnable使えない？
+        }
+    }
+    @IBAction func play(_ sender: Any) {
+    }
+    @IBAction func go(_ sender: Any) {
+        
+    }
         
 
     }

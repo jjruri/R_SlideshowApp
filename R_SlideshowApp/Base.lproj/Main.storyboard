@@ -57,6 +57,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="back_outlet" destination="Ngf-yg-r4x" id="rbP-sq-Y5R"/>
+                        <outlet property="go_outlet" destination="yAu-Sq-QGB" id="vmy-0S-POg"/>
                         <outlet property="imageview1" destination="ZvU-LQ-lKy" id="P6b-wh-DB0"/>
                     </connections>
                 </viewController>
