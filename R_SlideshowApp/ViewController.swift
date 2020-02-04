@@ -81,7 +81,8 @@ class ViewController: UIViewController {
         imageview1.image = image
 
         // タイマーの作成、始動
-        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
+        if self.timer == nil{
+            Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
         
             // 戻る・進むボタンを無効に
             back_outlet.isEnabled = false
@@ -90,6 +91,7 @@ class ViewController: UIViewController {
             // タイマー再生したら再生ボタンを非表示・停止ボタンを表示
             play_outlet.isHidden = true
             stop_outlet.isHidden = false
+        }
         
     }
     
