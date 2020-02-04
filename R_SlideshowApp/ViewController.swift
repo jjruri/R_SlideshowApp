@@ -59,9 +59,6 @@ class ViewController: UIViewController {
    
         stop_outlet.isHidden = true
         
-        
-        
-        
         }
 
         // selector: #selector(slideshowtimer(_:)) で指定された関数
@@ -72,9 +69,7 @@ class ViewController: UIViewController {
             displayImage()
         }
 
-        
-       
-    
+
     @IBAction func back(_ sender: Any) {
         
 
@@ -92,24 +87,28 @@ class ViewController: UIViewController {
             back_outlet.isEnabled = false
             go_outlet.isEnabled = false
         
-            //タイマー再生したら再生ボタンを非表示・停止ボタンを表示
+            // タイマー再生したら再生ボタンを非表示・停止ボタンを表示
             play_outlet.isHidden = true
             stop_outlet.isHidden = false
         
     }
     
     @IBAction func stop(_ sender: Any) {
-        // タイマーを停止
-        self.timer.invalidate()
+        if self.timer != nil {
+            // タイマーを停止
+            self.timer.invalidate()
+            
+            // タイマーをリセット
+            self.timer = nil
         
-        // 戻る・進むボタンを無効に
-        back_outlet.isEnabled = true
-        go_outlet.isEnabled = true
+            // 戻る・進むボタンを有効に
+            back_outlet.isEnabled = true
+            go_outlet.isEnabled = true
         
-        //タイマー再生したら再生ボタンを非表示・停止ボタンを表示
-        play_outlet.isHidden = false
-        stop_outlet.isHidden = true
-        
+            // 停止したら再生ボタンを表示・停止ボタンを非表示
+            play_outlet.isHidden = false
+            stop_outlet.isHidden = true
+        }
         
     }
     
