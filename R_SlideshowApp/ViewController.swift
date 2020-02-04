@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageview1: UIImageView!
     @IBOutlet weak var back_outlet: UIButton!
     @IBOutlet weak var go_outlet: UIButton!
+    @IBOutlet weak var stop_outlet: UIButton!
+    @IBOutlet weak var play_outlet: UIButton!
     
     // 表示している画像の番号
     var dispImageNo = 0
@@ -55,15 +57,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
    
-        let image = UIImage(named:"haru4")
-        imageview1.image = image
-
-        // タイマーの作成、始動
-        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
+        stop_outlet.isHidden = true
         
-        // タイマー中は戻る・進むボタンを無効に
-        back_outlet.isEnabled = true
-        go_outlet.isEnabled = true
+        
+        
+        
         }
 
         // selector: #selector(slideshowtimer(_:)) で指定された関数
@@ -78,12 +76,44 @@ class ViewController: UIViewController {
        
     
     @IBAction func back(_ sender: Any) {
-        if self.timer == nil{
-         //★OutletじゃないといisEnable使えない？
-        }
+        
+
     }
+    
     @IBAction func play(_ sender: Any) {
+        
+        let image = UIImage(named:"haru4")
+        imageview1.image = image
+
+        // タイマーの作成、始動
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
+        
+            // 戻る・進むボタンを無効に
+            back_outlet.isEnabled = false
+            go_outlet.isEnabled = false
+        
+            //タイマー再生したら再生ボタンを非表示・停止ボタンを表示
+            play_outlet.isHidden = true
+            stop_outlet.isHidden = false
+        
     }
+    
+    @IBAction func stop(_ sender: Any) {
+        // タイマーを停止
+        self.timer.invalidate()
+        
+        // 戻る・進むボタンを無効に
+        back_outlet.isEnabled = true
+        go_outlet.isEnabled = true
+        
+        //タイマー再生したら再生ボタンを非表示・停止ボタンを表示
+        play_outlet.isHidden = false
+        stop_outlet.isHidden = true
+        
+        
+    }
+    
+    
     @IBAction func go(_ sender: Any) {
         
     }
