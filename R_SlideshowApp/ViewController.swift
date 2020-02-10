@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageview1: UIImageView!
     @IBOutlet weak var back_outlet: UIButton!
     @IBOutlet weak var go_outlet: UIButton!
-    @IBOutlet weak var stop_outlet: UIButton!
     @IBOutlet weak var play_outlet: UIButton!
     
     // 表示している画像の番号
@@ -56,8 +55,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-   
-        stop_outlet.isHidden = true
+        
+        //★不要？
+        //let image = UIImage(named:"haru4")
+        //imageview1.image = image
         
         }
 
@@ -76,10 +77,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func play(_ sender: Any) {
-        
-        let image = UIImage(named:"haru4")
-        imageview1.image = image
-
         // タイマーの作成、始動
         if self.timer == nil{
             Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
@@ -90,8 +87,6 @@ class ViewController: UIViewController {
         
             // タイマー再生したら再生ボタンを非表示・停止ボタンを表示
             go_outlet.setTitle("停止", for: .normal)
-            //play_outlet.isHidden = true
-            //stop_outlet.isHidden = false
         }
         
         else if self.timer != nil {
@@ -107,17 +102,7 @@ class ViewController: UIViewController {
         
             // 停止したら再生ボタンを表示・停止ボタンを非表示
             go_outlet.setTitle("再生", for: .normal)
-            //play_outlet.isHidden = false
-            //stop_outlet.isHidden = true
         }
-        
-        
-    }
-    
-    //@IBAction func stop(_ sender: Any) {
-        //if self.timer != nil {
-        //}
-        
     }
     
     
@@ -125,7 +110,5 @@ class ViewController: UIViewController {
         
     }
         
-
-    }
-
+}
 
