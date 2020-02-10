@@ -61,8 +61,15 @@ class ViewController: UIViewController {
         
         let image = UIImage(named:"haru4")
         imageview1.image = image
-        
         }
+    
+    //次の画面に渡すデータを準備
+    override func prepare(for segue:UIStoryboardSegue, sender:Any?){
+        // segueから遷移先のImageViewControllerを取得する
+        let imageViewController:ImageViewController = segue.destination as! ImageViewController
+        // 遷移先のdispImageNo_bigに渡す
+        imageViewController.dispImageNo_big = dispImageNo
+    }
 
         // selector: #selector(slideshowtimer(_:)) で指定された関数
         @objc func slideshowTimer(_ timer: Timer) {

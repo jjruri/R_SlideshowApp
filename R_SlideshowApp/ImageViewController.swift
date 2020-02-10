@@ -9,6 +9,9 @@
 import UIKit
 
 class ImageViewController: UIViewController {
+    
+    // 受け取るためのプロパティ（変数）を宣言しておく
+    var dispImageNo_big = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
