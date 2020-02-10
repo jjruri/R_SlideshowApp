@@ -122,6 +122,6 @@ class ViewController: UIViewController {
         displayImage()
         
     }
-        
+    
 }
 
