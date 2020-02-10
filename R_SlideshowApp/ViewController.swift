@@ -56,8 +56,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //let image = UIImage(named:"haru4")
-        //imageview1.image = image
+        let image = UIImage(named:"haru4")
+        imageview1.image = image
         
         }
 
@@ -78,8 +78,8 @@ class ViewController: UIViewController {
     @IBAction func play(_ sender: Any) {
         // タイマーの作成、始動
         if self.timer == nil{
-            print("nilだったのでif側")
-            timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
+            //print("nilだったのでif側")
+            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(slideshowTimer(_:)), userInfo: nil, repeats: true)
         
             // 戻る・進むボタンを無効に
             back_outlet.isEnabled = false
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
         
         else /*if self.timer != nil */
         {
-            print("nilじゃなかったのでelse側")
+            //print("nilじゃなかったのでelse側")
         // タイマーを停止
             self.timer.invalidate()
             
