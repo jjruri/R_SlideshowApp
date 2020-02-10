@@ -39,14 +39,6 @@
                                     <action selector="go:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DPD-ru-Bf5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhD-S0-Tnb">
-                                <rect key="frame" x="192" y="821" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="停止"/>
-                                <connections>
-                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybB-IR-FVi"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -69,7 +61,6 @@
                         <outlet property="go_outlet" destination="yAu-Sq-QGB" id="vmy-0S-POg"/>
                         <outlet property="imageview1" destination="ZvU-LQ-lKy" id="P6b-wh-DB0"/>
                         <outlet property="play_outlet" destination="fLb-qH-vrz" id="yhw-NA-nNA"/>
-                        <outlet property="stop_outlet" destination="qhD-S0-Tnb" id="KCW-DN-Ius"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
