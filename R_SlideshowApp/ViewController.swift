@@ -89,15 +89,13 @@ class ViewController: UIViewController {
             go_outlet.isEnabled = false
         
             // タイマー再生したら再生ボタンを非表示・停止ボタンを表示
-            play_outlet.isHidden = true
-            stop_outlet.isHidden = false
+            go_outlet.setTitle("停止", for: .normal)
+            //play_outlet.isHidden = true
+            //stop_outlet.isHidden = false
         }
         
-    }
-    
-    @IBAction func stop(_ sender: Any) {
-        if self.timer != nil {
-            // タイマーを停止
+        else if self.timer != nil {
+        // タイマーを停止
             self.timer.invalidate()
             
             // タイマーをリセット
@@ -108,9 +106,17 @@ class ViewController: UIViewController {
             go_outlet.isEnabled = true
         
             // 停止したら再生ボタンを表示・停止ボタンを非表示
-            play_outlet.isHidden = false
-            stop_outlet.isHidden = true
+            go_outlet.setTitle("再生", for: .normal)
+            //play_outlet.isHidden = false
+            //stop_outlet.isHidden = true
         }
+        
+        
+    }
+    
+    //@IBAction func stop(_ sender: Any) {
+        //if self.timer != nil {
+        //}
         
     }
     
