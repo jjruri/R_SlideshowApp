@@ -38,7 +38,10 @@ class ViewController: UIViewController {
         // 範囲より上を指している場合、最初の画像を表示
         if dispImageNo > 2 {
             dispImageNo = 0
-        }
+            }
+        else if dispImageNo < 0 {
+            dispImageNo = 2
+            }
         
         // 表示している画像の番号から名前を取り出し
         let name = imageNameArray[dispImageNo]
@@ -71,7 +74,10 @@ class ViewController: UIViewController {
 
 
     @IBAction func back(_ sender: Any) {
-        
+        // 表示している画像の番号を1減らす
+        dispImageNo -= 1
+        // 表示している画像の番号を元に画像を表示する
+        displayImage()
 
     }
     
@@ -110,6 +116,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func go(_ sender: Any) {
+        // 表示している画像の番号を1増やす
+        dispImageNo += 1
+        // 表示している画像の番号を元に画像を表示する
+        displayImage()
         
     }
         
