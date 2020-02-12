@@ -15,25 +15,23 @@ class ImageViewController: UIViewController {
     
     // 受け取るためのプロパティ（変数）を宣言しておく
     var dispImageNo_big = 0
-    var imageNameArray_big = Int.self /*配列の受け渡しどうやるの？*/
-    
-    //★ここから仮★
-        // 表示している画像の番号から名前を取り出し
-        let name2 = imageNameArray_big[dispImageNo_big]
-        
-        // 画像を読み込み
-        let image2 = UIImage(named: name2)
-        
-        // Image Viewに読み込んだ画像をセット
-        imageview2.image = image2
-    //★ここまで仮★
+    var imageNameArray_big = Array[] /*配列の受け渡しどうやるの？*/
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        //★ここから仮★
+            // 表示している画像の番号から名前を取り出し
+            let name2 = imageNameArray_big[dispImageNo_big]
         
+            // 画像を読み込み
+            let image2 = UIImage(named: name2)
+            
+            // Image Viewに読み込んだ画像をセット
+            imageview2.image = image2
+        //★ここまで仮★
         
     }
     
