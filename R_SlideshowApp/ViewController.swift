@@ -26,15 +26,22 @@ class ViewController: UIViewController {
     // 表示している画像の番号
     var dispImageNo = 0
     
+    
+    let imageNameArray = [
+        "haru4",
+        "haru3",
+        "haru2"
+    ]
+    
     // 表示している画像の番号を元に画像を表示する
     func displayImage() {
-        //画像の名前の配列
-        let imageNameArray = [
+        //画像の名前の配列 ★funcの中に入っているとsegueで連携する変数の候補に出てこない
+        /*let imageNameArray = [
             "haru4",
             "haru3",
             "haru2"
         ]
-        
+        */
         // 範囲より上を指している場合、最初の画像を表示
         if dispImageNo > 2 {
             dispImageNo = 0
@@ -69,6 +76,7 @@ class ViewController: UIViewController {
         let imageViewController:ImageViewController = segue.destination as! ImageViewController
         // 遷移先のdispImageNo_bigに渡す
         imageViewController.dispImageNo_big = dispImageNo
+        imageViewController.imageNameArray2 = imageNameArray
     }
 
         // selector: #selector(slideshowtimer(_:)) で指定された関数

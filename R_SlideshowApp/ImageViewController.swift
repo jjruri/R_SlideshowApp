@@ -15,19 +15,27 @@ class ImageViewController: UIViewController {
     
     // 受け取るためのプロパティ（変数）を宣言しておく
     var dispImageNo_big = 0
+    var imageNameArray2 = [""]
+    
     
     // 画像インスタンス用
-    var image2 = UIImage()
+    
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let name = imageNameArray2[dispImageNo_big]
+        //print("name:\(name)")
+        let image2 = UIImage(named: name)
         
-        if dispImageNo_big == 0 {
-            image2 = UIImage(named:"haru4") ?? <#default value#>
+        /*
+ if dispImageNo_big == 0 {
+            image2 = UIImage(named: name)!
         }
+ */
+        imageview2.image = image2
         
         
     }
